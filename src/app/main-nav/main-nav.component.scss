@@ -1,0 +1,126 @@
+@import '../../variables';
+.mainNavWrap {
+  .mobileMenu{
+    display: none;
+  }
+  position: relative;
+  ul {
+    height: 50px;
+    align-items: center;
+    display: flex;
+    li {
+      display: block;
+      a {
+        font-size: 14px;
+        text-transform: uppercase;
+      }
+    }
+  }
+  background: $grey_light;
+  .mainNav {
+
+    display: flex;
+    max-width: 1024px;
+    margin: 0 auto;
+
+    ul {
+      &.navigation {
+        flex: 1 auto;
+        padding-left: 168px;
+        li {
+          a {
+            padding-right: 35px;
+            color: $text-color;
+            font-weight: 700;
+          }
+        }
+      }
+      &.language {
+        li {
+          &:last-child{
+            a{
+              padding-right: 0px;
+            }
+          }
+          a {
+            padding-right: 20px;
+            color: $blue;
+            &.selected {
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 1024px) {
+  .mainNavWrap{
+    padding:0px 10px;
+  }
+}
+@media all and (max-width: 839px) {
+  .mainNavWrap {
+    .mobileMenu{
+      display:flex;
+      flex-wrap: wrap;
+      align-items: center;
+      height:51px;
+      position: relative;
+      .hamburger{
+        flex: 1 auto;
+        text-align: right;
+        span{
+          border-radius: 4px;
+          font-size: 20px;
+          color:#fff;
+          background:$green;
+          width:35px;
+          text-align: center;
+          line-height: 35px;
+          height:35px;
+        }
+      }
+
+    }
+    .mainNav{
+      transition: all 0.2s ease;
+      display: block;
+      overflow: hidden;
+      z-index: 2;
+      width: 100%;
+      left:0;
+      background: $grey_light;
+      ul{
+        text-align: center;
+      }
+      ul.navigation{
+        li{
+
+          border-bottom: 1px solid $bg_grey;
+          &:first-child{
+            border-top: 1px solid $bg_grey;
+          }
+          a{
+            display: block;
+            padding:15px 0px;
+          }
+        }
+        height:auto;
+        padding:0;
+        display:block;
+      }
+      ul.language{
+        justify-content: center;
+      }
+      &.closed{
+        height:0px;
+
+      }
+      &.open{
+        height: 358px;
+      }
+    }
+  }
+
+}

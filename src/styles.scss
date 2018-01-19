@@ -1,0 +1,504 @@
+/* You can add global styles to this file, and also import other style files */
+@import './_reset';
+@import './_variables';
+* {
+  box-sizing: border-box;
+  padding:0;
+  margin:0;
+}
+body{
+  font-size:13px;
+  color:$text-color;
+}
+a{
+  cursor: pointer;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: $text-color;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: $text-color;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: $text-color;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: $text-color;
+}
+.container{
+  overflow-x: hidden;
+}
+.content{
+  max-width: 1024px;
+  margin:0 auto;
+  p{
+    font-size: 15px;
+    color:$text-color;
+  }
+  form input[type="text"], form input[type="password"], form input[type="email"], form input[type="number"]{
+    height:50px;
+    display: block;
+  }
+}
+.textblockWrap{
+  max-width: 1024px;
+  margin:0 auto;
+  position: relative;
+}
+.textblock{
+  background: rgba($blue,0.7);
+  position: absolute;
+  bottom: 100px;
+  color:#fff;
+  font-size: 15px;
+
+
+  &:after{
+    content:'';
+    width:15px;
+    height:15px;
+    position: absolute;
+    left:-12px;
+    top:-12px;
+    border-radius: 50%;
+    box-sizing: content-box;
+    background:$green;
+    border:7px solid #fff;
+  }
+}
+input, textarea{
+  width:100%;
+  background:$grey_inputs;
+  line-height: 17px;
+  padding:3px 7px;
+  border:1px solid $grey_light;
+  letter-spacing: 1px;
+  &:focus{
+    outline:0;
+  }
+}
+.infoText{
+  color:lighten($grey, 10%);
+}
+/* Customize the label (the container) */
+.checkContainer {
+  color:$grey ;
+  line-height: 22px;
+  font-size: 14px;
+  height:10px;
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  a{
+    color:$green;
+
+    text-decoration: underline;
+  }
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &:hover input ~ .checkmark {
+    background-color: $grey_light;
+  }
+  input:checked ~ .checkmark {
+    background-color: $green;
+    &:after {
+      position: absolute;
+      content: "";
+      display: block;
+      left: 7px;
+      top: 3px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color:$grey_inputs;
+    border:1px solid $grey_light;
+  }
+}
+button{
+  outline:0;
+  border:none;
+}
+.auctionActionbtns{
+  text-align: right;
+  .button{
+    font-size: 13px;
+    padding: 0px 4px;
+    color: #0a1e75;
+    background: #f3f3f3;
+    border: 1px solid #eaeaea;
+  }
+  button{
+    margin-right: 7px;
+    width:auto;
+    &:last-child{
+      margin-right: 0px;
+    }
+  }
+}
+p.phoneEmail{
+  a{
+    color:$green;
+  }
+  margin-top: 22px;
+  padding-bottom: 5px;
+}
+.cell {
+  height:380px;
+  margin-bottom: 50px;
+  .gridCellImage{
+    width:100%;
+    position: relative;
+    img{
+      width:100%;
+      height:250px;
+      object-fit: cover;
+    }
+    &:hover{
+
+      &:after{
+        cursor: pointer;
+        transition: all 0.2s ease;
+        position: absolute;
+        content:"\e003";
+        font-family: "Glyphicons Halflings";
+        font-size:70px;
+        color:#fff;
+        align-items: center;
+        justify-content: center;
+        display:flex;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        background: rgba(#565656, 0.7);
+      }
+    }
+  }
+  .gridContent{
+    padding-top: 20px;
+    padding-left: 20px;
+    a{
+      color:$blue;
+    }
+    .gridPrice{
+      line-height: 5px;
+      padding-top: 10px;
+      font-size: 18px;
+    }
+  }
+  .gridActions{
+    align-items: center;
+    margin-right: 20px;
+    font-size: 12px;
+    margin-left: 20px;
+    border-bottom: 1px solid $grey_light;
+    & > div{
+      flex:1 auto;
+    }
+    display: flex;
+  }
+}
+h1.contentTitle{
+  font-size:45px;
+}
+h2.contentTitle{
+  font-size:25px;
+  margin-bottom: 25px;
+}
+.contentTitle{
+  margin:0;
+  line-height: 1;
+  font-weight: 200;
+}
+.form{
+  .price{
+    display:block;
+    position: relative;
+    &:after{
+      position: absolute;
+      display: block;
+      content: '€';
+      top:14px;
+      color:$blue;
+      left:20px;
+      font-size:16px;
+    }
+  }
+  .formItem.buttonItem{
+    max-width:210px;
+    align-self: flex-end;
+  }
+  .formRow{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    &:last-child{
+      margin-bottom: 0px;
+    }
+    .formItem{
+      flex:1 auto;
+      display: inline-block;
+      margin-right: 60px;
+      &:last-child{
+        margin-right: 0px;
+      }
+    }
+.button{
+  background: $grey;
+
+}
+  }
+}
+.submitRow{
+  display: block;
+  margin-bottom: 80px;
+  padding-top: 30px;
+  .button{
+    height:60px;
+    width: 210px;
+    margin-top: 35px;
+  }
+  .button.question{
+    margin-top: 0px;
+    font-weight: 400;
+  }
+  .submitForm{
+    background:$green;
+  }
+  .question{
+    background:#fff;
+    color:$green;
+    display: block;
+  }
+}
+.button{
+  line-height: 1;
+  height:50px;
+  width:100%;
+  color:#fff;
+  text-transform: uppercase;
+  font-weight:700;
+  font-size: 15px;
+  span{
+    margin-left: 5px;
+  }
+}
+.titlePaginator{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  .leftItem{
+    flex:1 auto;
+  }
+}
+label{
+  color: $blue;
+  font-size:18px;
+  line-height: 1;
+  display: block;
+  margin-bottom: 12px;
+  span{
+    &.optional{
+      font-size:14px;
+    }
+  }
+}
+.slick-next,.slick-prev{
+  z-index:1;
+  background:rgba(0,0,0,0.2) !important;
+  width:40px !important;
+ height:70px !important;
+
+  &:before{
+    color:#fff;
+    font-family: "Glyphicons Halflings" !important;
+    font-size:35px !important;
+
+  }
+}
+.slick-next{
+  right:0px !important;
+  &:before{
+    content: "\e258" !important;
+  }
+}
+.slick-prev{
+  left:0px !important;
+  &:before{
+    content:"\e257" !important;
+  }
+}
+.slick-dots{
+  bottom:20px !important;
+    li{
+      button:before{
+        color:$bg_grey !important;
+        font-size:17px !important;
+      }
+    }
+}
+.slick-dotted.slick-slider{
+  margin-bottom: 0px !important;
+}
+.sliderNav{
+  margin-top: 10px;
+  .slide {
+    .silderNavSlide{
+      margin-right: 10px;
+    }
+    &:nth-child(3n+3){
+      .silderNavSlide{
+        margin-right: 0px;
+      }
+    }
+  }
+}
+#activeAuctions, #relatedItems{
+  .carousel{
+    .slick-arrow{
+      top:0;
+      height:250px !important;
+      transform: none;
+    }
+  }
+  .slick-track{
+    .slide{
+      .cell{
+        margin-right: 10px;
+      }
+      &:nth-child(4n+4){
+        .cell{
+          margin-right: 0px;
+        }
+      }
+
+    }
+
+  }
+  .slide:first-child{
+    .cell {
+
+    }
+  }
+}
+#register{
+  .select{
+    max-width: 100%;
+  }
+  .select-styled{
+    background-color: $grey_inputs;
+  }
+}
+.select-hidden {
+  display: none;
+  visibility: hidden;
+  padding-right: 10px;
+}
+.select {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  font-size: 16px;
+  color: $text-color;
+  width: 100%;
+  max-width: 483px;
+  height: 50px;
+}
+.select-styled {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border:1px solid $grey_light;
+  background-color: $grey_light;
+  padding: 14px 20px;
+  transition: all 0.2s ease-in;
+  &:after {
+    content:"\e259";
+    font-family: "Glyphicons Halflings";
+    width: 0;
+    height: 0;
+    position: absolute;
+    font-size: 18px;
+    top: 13px;
+    right: 40px;
+  }
+  &:active, &.active {
+    background-color: $grey_light;
+    &:after{
+      content:"\e260";
+    }
+  }
+}
+.select-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  margin: 0;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  list-style: none;
+  border:1px solid $grey_light;
+  background-color: rgba(lighten($bg_grey,2%), 0.9);
+  li {
+    margin: 0;
+    padding: 12px 0;
+    text-indent: 15px;
+    border-top: 1px solid $grey_light;
+    &:hover {
+      background: $grey_light;
+    }
+    &[rel="hide"] {
+      display: none;
+    }
+  }
+}
+@media all and (max-width: 839px) {
+  header .searchWrap{
+    .search{
+      input{
+        display: none;
+      }
+      span{
+        flex:1 auto;
+        margin-right: 10px;
+        font-size: 20px !important;
+      }
+
+    }
+
+  }
+  .page{
+    margin-top: 105px;
+  }
+  .content{
+    padding:0px 10px;
+  }
+}

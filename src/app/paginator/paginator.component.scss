@@ -1,0 +1,27 @@
+@import '../../variables';
+.paginator{
+  margin-bottom: 25px;
+  ul{
+    display:block;
+    list-style: none;
+    li{
+      a{
+        color:$text-color;
+        font-size: 15px;
+        &.selected{
+          font-weight: 700;
+          color:#000;
+        }
+      }
+      margin-right: 7px;
+      &:first-child{
+        margin-right:15px;
+      }
+      &:last-child{
+        margin-right: 0px;
+        margin-left: 5px;
+      }
+    display:inline-block;
+    }
+  }
+}

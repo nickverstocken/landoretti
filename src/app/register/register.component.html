@@ -1,0 +1,76 @@
+<app-banner></app-banner>
+<app-breadcrumbs [items]="['Home', 'Register']" ></app-breadcrumbs>
+<section id="register">
+    <div class="content">
+        <h1 class="contentTitle">Register</h1>
+        <form class="form" id="frmRegister">
+            <div id="gridRegister">
+                    <div class="formItem">
+                        <label>Company or name</label>
+                        <input type="text" >
+                    </div>
+                <div class="formItem">
+                    <label>Email</label>
+                    <input type="email" >
+                </div>
+                    <div class="formItem">
+                        <label>Password</label>
+                        <input type="password" >
+                    </div>
+                <div class="formItem">
+                    <label>Password confirmation</label>
+                    <input type="password" >
+                </div>
+                    <div class="formItem">
+                        <label>Country</label>
+                       <app-select [options]="options"></app-select>
+                    </div>
+                <div class="formItem">
+                    <div class="flex">
+                        <div>
+                            <label>Zip Code</label>
+                            <input type="number" >
+                        </div>
+                        <div>
+                            <label>City</label>
+                            <input type="text" >
+                        </div>
+
+                    </div>
+
+                </div>
+                    <div class="formItem">
+                        <label>Address</label>
+                        <input type="text" >
+                    </div>
+                <div class="formItem">
+                    <label>Phone number</label>
+                    <input type="text" class="phonePrefix"><input class="phoneNumber" type="text" >
+                </div>
+                    <div class="formItem">
+                        <label>Acount number</label>
+                        <input type="text" >
+                    </div>
+                <div class="formItem">
+                    <label>VAT number</label>
+                    <input type="text" >
+                </div>
+                <div class="formItem wide">
+                    <label>Alternative payment methods</label>
+                    <input type="text" >
+                </div>
+            </div>
+            <div class="submit">
+                <div class="submitRow">
+                    <label class="checkContainer">
+                        <input type="checkbox"> I Agree To <a>The Terms And Conditions</a>
+                        <span class="checkmark"></span>
+                    </label>
+                    <button class="button submitForm" type="submit">Add Auction</button>
+                    <button class="button question" type="submit">Ask a Question <span class="glyphicon glyphicon-menu-right"></span></button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</section>

@@ -1,0 +1,18 @@
+<app-banner></app-banner>
+<app-breadcrumbs [items]="['Home', 'Nick Verstocken', 'My Watchlist']" ></app-breadcrumbs>
+<section>
+  <div class="content">
+    <h1 class="contentTitle">My watchlist</h1>
+    <div class="auctionActionbtns">
+      <button class="button">Delete selected <span class="glyphicon glyphicon-menu-right"></span></button><button class="button">Clear watchlist <span class="glyphicon glyphicon-menu-right"></span></button>
+    </div>
+    <div class="tableFilter">
+      <app-table-filter [items]="filters" (filter)="filterTable($event)"></app-table-filter>
+    </div>
+    <div id="watchlist">
+      <app-actiontable [checkboxes]="true" filter="all" (pushToExpired)="isExpired($event)" [data]="data"></app-actiontable>
+    </div>
+  </div>
+
+</section>
+

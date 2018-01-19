@@ -1,0 +1,31 @@
+@import '../../variables';
+.breadCrumbs{
+  .breadcrumbsWrap{
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+  ol{
+    margin-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 43px;
+    li{
+      display: block;
+      a{
+        text-transform: capitalize;
+        color:$green;
+        font-size: 13px;
+        &:after{
+          content: ' > ';
+          white-space: pre;
+        }
+      }
+      &:last-child{
+        a:after{
+          content:'';
+        }
+
+      }
+    }
+  }
+}

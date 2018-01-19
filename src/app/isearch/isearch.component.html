@@ -1,0 +1,67 @@
+<app-banner></app-banner>
+<app-breadcrumbs [items]="['Home', 'isearch']" ></app-breadcrumbs>
+<section class="isearch">
+    <div class="content">
+        <h1 class="contentTitle">I search</h1>
+        <div class="addRequest">
+            <h2 class="contentTitle">Add a request</h2>
+            <div class="frmRequest">
+                <form class="form">
+                    <div class="formRow">
+                        <div class="formItem">
+                            <label>What are you looking for?</label>
+                            <input type="text" >
+                        </div>
+                        <div class="formItem">
+                            <label>Artist</label>
+                            <input type="text" >
+                        </div>
+                    </div>
+                        <div class="formRow">
+                            <div class="formItem">
+                                <label>Information about the artwork</label>
+                                <input type="text" >
+                            </div>
+                            <div class="buttonItem formItem">
+                                <button class="button">ADMIT REQUEST</button>
+                            </div>
+                        </div>
+
+                </form>
+                <p class="infoText">Your request must be approved by the administrator. If your question has been approved, it will appear on our site.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="overview">
+    <div class="content">
+        <div class="titlePaginator">
+          <div class="leftItem"><h2 class="contentTitle">Overwiew</h2> </div>  <div class="rightItem"><app-paginator></app-paginator></div>
+        </div>
+        <div class="overviewResults">
+            <ul>
+                <li *ngFor="let id of results" id="{{id}}">
+                    <div>
+                        <div class="result">
+                            <span>Search: </span><span>Mona Lisa, Leonardo Da Vinci</span>
+                        </div>
+                        <div class="result">
+                            <span>Description: </span><span>Lorem ipsum, dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</span>
+                        </div>
+                        <div class="result">
+                            <span>Posted: </span><span>5 July 2013</span>
+                        </div>
+
+                    </div>
+                    <div>
+                        <button class="button">I own this artwork <span class="glyphicon glyphicon-menu-right"></span></button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="paginator2">
+            <app-paginator></app-paginator>
+        </div>
+    </div>
+
+</section>

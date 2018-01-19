@@ -1,0 +1,113 @@
+<app-banner></app-banner>
+<app-breadcrumbs [items]="['Home', 'Nick Verstocken', 'My actions', 'New auction']" ></app-breadcrumbs>
+<section>
+  <div class="content">
+    <h1 class="contentTitle">Add a new auction</h1>
+    <form class="form">
+      <div class="formRow">
+        <div class="formItem">
+          <app-select [options]="options"></app-select>
+        </div>
+      </div>
+      <div class="formRow">
+        <div class="formItem">
+          <label>Auction title</label>
+          <input placeholder="Auction title" type="text">
+        </div>
+        <div class="formItem year">
+          <label>Year</label>
+          <input placeholder="X X X X"  type="text">
+        </div>
+      </div>
+      <div class="formRow">
+        <div class="formItem">
+          <label>Width</label>
+          <input placeholder="Auction" type="text">
+        </div>
+        <div class="formItem">
+          <label>Height</label>
+          <input placeholder="X X X X"  type="text">
+        </div>
+        <div class="formItem">
+          <label>Depth <span class="optional">(optional)</span></label>
+          <input placeholder="X X X X"  type="text">
+        </div>
+      </div>
+      <div class="formRow">
+        <div class="formItem">
+          <label>Description</label>
+          <textarea placeholder="Describe your auction as thorough as possible"></textarea>
+        </div>
+      </div>
+      <div class="formRow">
+        <div class="formItem">
+          <label>Condition</label>
+          <textarea  placeholder="What's the condition of the artwork?"></textarea>
+        </div>
+      </div>
+      <div class="formRow">
+        <div class="formItem">
+          <label>Origin</label>
+          <input placeholder="What's the origin of the artwork?" type="text">
+        </div>
+      </div>
+      <div class="formRow">
+        <div class="formItem">
+          <label>Photos</label>
+          <p class="infoText">
+            Please uploade ons picture with the signature of the artwork and one picture of the artwork. <br>
+            You can upload up to 3 pictures with a maximum of 10MB eacht.
+          </p>
+        </div>
+      </div>
+      <div class="formRow">
+        <div class="formItem">
+          <button class="button">Upload image of the artwork</button>
+        </div>
+        <div class="formItem">
+          <button class="button">Upload image of the signature</button>
+        </div>
+        <div class="formItem buttonItem">
+          <button class="button">Optional image</button>
+        </div>
+      </div>
+      <h2 class="contentTitle">Pricing</h2>
+      <div class="formRow">
+        <div class="formItem year">
+          <label>Minimum estimated price</label>
+         <span class="price"> <input placeholder="Auction" type="text"></span>
+        </div>
+        <div class="formItem year">
+          <label>Maximum estimated price</label>
+          <span class="price"><input placeholder="X X X X"  type="text"></span>
+        </div>
+        <div class="formItem year">
+          <label>Buyout price <span class="optional">(optional)</span></label>
+          <span class="price"> <input placeholder="X X X X"  type="text"></span>
+        </div>
+      </div>
+      <div class="formRow">
+        <div class="formItem year">
+          <label>End date</label>
+          <input placeholder="DD/MM/YY" type="text">
+        </div>
+        <div class="formItem">
+          <label>Attention</label>
+          <p class="infoText">
+            You can not change the information after adding this auction.<br>
+            If you're not certain about the information of your artwork, please ask for help.<br>
+            We will answer your question as soon as possible.
+          </p>
+        </div>
+      </div>
+      <div class="submitRow">
+        <label class="checkContainer">
+          <input type="checkbox"> I Agree To <a>The Terms And Conditions</a>
+          <span class="checkmark"></span>
+        </label>
+        <button type="submit" class="button submitForm">Add Auction</button>
+        <button type="submit" class="button question">Ask a Question <span class="glyphicon glyphicon-menu-right"></span></button>
+      </div>
+    </form>
+  </div>
+</section>

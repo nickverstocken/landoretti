@@ -1,0 +1,62 @@
+#frmRegister{
+  margin-top: 50px;
+  .submit{
+    margin-top: 40px;
+  }
+  #gridRegister{
+    display: grid;
+    grid-gap: 40px 60px;
+    grid-template-columns: repeat(2, minmax(280px, 5fr));
+    grid-auto-flow: row;
+    .formItem{
+      &.wide{
+        grid-column: span 2;
+      }
+      .flex{
+        display: flex;
+        & > div:first-child{
+          padding-right: 30px;
+        }
+        & > div:last-child{
+          padding-left: 30px;
+        }
+        & > div{
+          flex:1 auto;
+        }
+      }
+      .phonePrefix, .phoneNumber{
+        display: inline-block;
+      }
+      .phonePrefix{
+        width:90px;
+        margin-right: 10px;
+      }
+      .phoneNumber{
+        width:calc(100% - 100px);
+      }
+    }
+  }
+}
+@media all and (max-width: 840px) {
+  #frmRegister{
+    #gridRegister{
+      display:block;
+      .formItem{
+        margin-bottom: 20px;
+
+        .flex{
+          display:block;
+          & > div:first-child{
+            padding-right: 0px;
+          }
+          & > div:last-child{
+            padding-left: 0px;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+
+  }
+
+}

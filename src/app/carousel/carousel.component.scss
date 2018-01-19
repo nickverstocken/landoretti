@@ -1,0 +1,35 @@
+@import '../../variables';
+.slideItem{
+  width:100%;
+  position: relative;
+  .textblock{
+    left:50%;
+    max-width: 1024px;
+    margin:15px;
+    transform: translateX(-50%);
+    width:calc(100% - 60px);
+    padding:40px 50px;
+  }
+  img{
+    width:100%;
+    height:calc(100vh - 103px);
+    object-fit: cover;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .textblock{
+    width:50%;
+  }
+}
+@media all and (max-width: 839px) {
+  .textblock{
+    display: none;
+  }
+  .slideItem{
+    img{
+      height:calc(50vh);
+    }
+  }
+}
+@media all and (max-width: 480px) { }

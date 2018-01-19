@@ -1,0 +1,32 @@
+<app-banner></app-banner>
+<app-breadcrumbs [items]="['Home', 'Nick Verstocken', 'My Auctions']" ></app-breadcrumbs>
+<section>
+  <div class="content">
+    <h1 class="contentTitle">My auctions</h1>
+    <div class="auctionActionbtns">
+      <button routerLink="/newauction" class="button">Add new auction <span class="glyphicon glyphicon-menu-right"></span></button>
+    </div>
+    <div id="pending">
+      <h2 class="contentTitle">Pending</h2>
+      <app-actiontable filter="pending" (pushToExpired)="pushToExpired($event)" [data]="pending"></app-actiontable>
+    </div>
+    <div id="refused">
+      <h2 class="contentTitle">Refused</h2>
+      <app-actiontable filter="refused" [data]="refused"></app-actiontable>
+    </div>
+    <div id="active">
+      <h2 class="contentTitle">Active</h2>
+      <app-actiontable filter="active" [data]="active"></app-actiontable>
+    </div>
+    <div id="Expired">
+      <h2 class="contentTitle">Expired</h2>
+      <app-actiontable filter="expired" [data]="expired"></app-actiontable>
+    </div>
+    <div id="Sold">
+      <h2 class="contentTitle">Sold</h2>
+      <app-actiontable filter="sold" [data]="sold"></app-actiontable>
+    </div>
+  </div>
+
+</section>
+

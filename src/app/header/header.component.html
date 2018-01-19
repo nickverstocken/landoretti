@@ -1,0 +1,25 @@
+<header>
+  <div class="navWrap">
+    <div class="topnav">
+      <div class="logo">
+        <img src="../../assets/images/logo.svg" alt="logo landoretti">
+      </div>
+      <ul *ngIf="!loggedin">
+        <li><a title="go to registration" routerLink="/register"><span class="glyphicon glyphicon-copy"></span>Register</a></li>
+        <li *ngIf="!loginForm"><a title="go to login"  (click)="loginShow()"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+        <li  *ngIf="loginForm" ><input placeholder="User" type="text"></li>
+        <li *ngIf="loginForm"><input placeholder="Password" type="password"></li>
+        <li *ngIf="loginForm"><button type="button" (click)="showLoggedin()"><span class="glyphicon glyphicon-menu-right"></span></button></li>
+      </ul>
+      <ul *ngIf="loggedin">
+        <li><a title="go to your watchlist"  routerLink="/watchlist"><span class="glyphicon glyphicon-menu-hamburger"></span>Watchlist</a></li>
+        <li><a title="go to you profile"  routerLink="/profile"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
+        <li><a title="log out"  (click)="logout()"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+      </ul>
+      <app-search class="searchWrap"></app-search>
+    </div>
+<app-main-nav></app-main-nav>
+
+  </div>
+
+</header>

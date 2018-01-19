@@ -1,0 +1,147 @@
+<app-banner></app-banner>
+<app-breadcrumbs [items]="['Home', 'Auctions', 'Salvador Dali', 'Dance of time III']" ></app-breadcrumbs>
+<section id="auctionDetail">
+  <div class="content">
+    <h1 class="contentTitle">Dance Of Time III</h1>
+    <div id="bidsTimer">
+      <app-timer time="{{toTimestamp('2018-02-14 16:10:03')}}" format="{dd}d {hh}h {mm}m"></app-timer>
+      <a>(7 Bids) </a><a routerLink="/watchlist"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+    </div>
+    <div class="actionDetailwrap">
+      <div class="auctionDetailLeft">
+        <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
+          <div ngxSlickItem class="slide">
+              <div class="sliderPreview">
+                <img src="../../assets/images/auctions/1.jpg" alt="Salvador Dali 1">
+          </div>
+          </div>
+          <div ngxSlickItem class="slide">
+          <div class="sliderPreview">
+            <img src="../../assets/images/auctions/2.jpg" alt="Salvador Dali 2">
+          </div>
+          </div>
+          <div ngxSlickItem class="slide">
+          <div class="sliderPreview">
+            <img src="../../assets/images/auctions/2.jpg" alt="Salvador Dali 3">
+          </div>
+          </div>
+        </ngx-slick>
+        <ngx-slick class="sliderNav" #slickModal="slick-modal" [config]="slideConfig2">
+          <div ngxSlickItem class="slide">
+            <div class="silderNavSlide">
+              <img src="../../assets/images/auctions/1.jpg" alt="Salvador Dali 1">
+            </div>
+          </div>
+          <div ngxSlickItem class="slide">
+            <div class="silderNavSlide">
+              <img src="../../assets/images/auctions/2.jpg" alt="Salvador Dali 2">
+            </div>
+          </div>
+          <div ngxSlickItem class="slide">
+            <div class="silderNavSlide">
+              <img src="../../assets/images/auctions/2.jpg" alt="Salvador Dali 3">
+            </div>
+          </div>
+        </ngx-slick>
+      </div>
+      <div class="auctionDetailRight">
+        <div id="detailsArt">
+          <h2>Dance Of Time III</h2>
+          <div id="artist"><a>1979, Salvador Dali</a></div>
+          <div id="timeLeft">
+            <div><app-timer time="{{toTimestamp('2018-02-14 16:10:03')}}" format="{dd}d {hh}h {mm}m"></app-timer> left</div>
+            <div>September 09, 2013, 13:00 p.m. (EST)</div>
+          </div>
+          <p>
+            tur adipisicing elit, sed do eiusmod tempor incididunt ut labaliqore et dolore magna incididunt ut labaliqore et dolore magna..  <a>more</a>
+          </p>
+          <div id="priceBlock">
+<div id="est">Estimated price :</div>
+            <div id="price">
+              € 9.500 - € 10.500
+            </div>
+            <div id="priceOffer">
+              <a>Buy now for € 15.000</a>
+            </div>
+            <div id="bids">
+              bids:7
+            </div>
+            <div id="priceAction">
+              <input type='number'> <span>Bid now <span class="glyphicon glyphicon-menu-right"></span></span>
+            </div>
+            <div id="addToWatchList">
+              <div>
+                <span class="glyphicon glyphicon-menu-hamburger"></span><a>add to my watchlist</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div id="info" class="actionDetailwrap">
+      <div class="auctionDetailLeft">
+        <div>
+          <h3>Description</h3>
+          <p>
+            "Dance of Time III" (1979-84) is a stunning bronze and gold patina sculpture
+            by Spanish Contemporary artist Salvador Dalí (Spain, 1904 - 1989), measures 10.43 inches (26.50 cm) and is stamped and numbered from an edition of 350. This sculpture is in perfect condition and is accompanied by documentation of authenticity. As one of the most well known and iconic images seen in Dali’s work, the melted watch has appeared consistently throughout the artist’s oeuvre. As time universally knows no limits, it is perceived as something perpetual- ‘dancing on’ and stopping for no one as exemplified in this ‘Dance of Time III’ sculpture. Meant to echo the fluidity of time, the undulated form of this melted clock captures the surrealistic imagery so beloved and continuously employed by Dali
+          </p>
+        </div>
+  <div class="block">
+    <h3>Condition</h3>
+    <p>
+      Lorem ipsum dolor sit amet, nec dictum, consectetuer donec tincidunt eget ante libero gravida. Wisi nec nulla, lorem suspendisse lorem id tellus eget, erat tellus, enim at. A purus libero amet vitae accumsan scelerisque, quis orci sed ornare pulvinar, luctus mauris turpis mollis ut vel eget, id massa non cursus felis. Sed et mus non non augue tortor. Pede id massa, ante rhoncus et at ad, fringilla vulputate dapibus nunc, iaculis sollicitudin accumsan non, hac vehicula hymenaeos. Felis aliquet donec vitae. Autem ante, sollicitudin feugiat amet viverra quae risus, dui dis semper ac non, mi curabitur amet. Bibendum nunc fusce aliquam ante tempus, imperdiet magna.
+    </p>
+  </div>
+
+      </div>
+      <div class="auctionDetailRight">
+      <h3>Artist</h3>
+        <p>Salvador Dali <br>
+        Spanish<br>
+          1904-1989
+        </p>
+        <h3>Dimensions</h3>
+        <p>
+          10.43 x 10.43 x 10.44
+        </p>
+        <h3>Color</h3>
+        <p>
+          Bronze, platinated bronze and gold
+        </p>
+        <button class="button">Ask a question about this auction</button>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="relatedItems">
+  <div class="content">
+    <h2 class="contentTitle">Related items</h2>
+  <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig3">
+    <div *ngFor="let item of items.data"  ngxSlickItem class="slide">
+      <div class="cell">
+        <div class="gridCellImage">
+          <img src="../../assets/images/auctions/{{item.id}}.jpg" alt="{{item.artist}}">
+        </div>
+        <div class="gridContent">
+          <div class="artist"><a>{{item.year}}, {{item.artist}} </a></div>
+          <h2>{{item.title}}</h2>
+          <div class="gridPrice">
+            <span>€ {{item.price | number:'1.3':'fr'}}</span>
+          </div>
+        </div>
+        <div class="gridActions">
+          <div class="gridTimer">
+            <app-timer *ngIf="item.status !== 'expired' && item.status !== 'sold' && item.status !== 'refused'" time="{{toTimestamp(item.end_date)}}" format="{dd}d {hh}h {mm}m"></app-timer>
+          </div>
+          <div class="gridButton auctionActionbtns">
+            <button routerLink="/auctions/{{item.id}}"  class="button">Visit auction <span class="glyphicon glyphicon-menu-right"></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ngx-slick>
+  </div>
+</section>

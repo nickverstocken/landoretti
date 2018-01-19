@@ -1,0 +1,132 @@
+@import "../../variables";
+footer{
+  border-bottom: 3px solid $green;
+  .content{
+    position: relative;
+  }
+
+  border-top:2px solid $bg_grey;
+  .logo{
+    -webkit-box-shadow: 0px 1px 20px 2px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 1px 20px 2px rgba(0,0,0,0.1);
+    box-shadow: 0px 1px 20px 2px rgba(0,0,0,0.1);
+    width:100px;
+    padding:0px 15px 15px 15px;
+    bottom:-53px;
+    position: absolute;
+    z-index: 1;
+    background: #fff;
+    img{
+      width:100%;
+    }
+  }
+}
+.columnWrap{
+  display: flex;
+  flex-wrap: wrap;
+  .column{
+    min-width: 200px;
+    padding-top: 40px;
+    flex-flow: column;
+    flex-grow: 1;
+
+    &:last-child{
+      padding-left:27px;
+      border-left:2px solid $bg_grey;
+    }
+    section{
+      a{
+        color:$green;
+
+      }
+      p {
+        color:#5c5c5c;
+        line-height: 21px;
+        margin-top: 3px;
+
+      }
+      margin-top: 22px;
+      &:first-child{
+        margin-top: 0px;
+      }
+      h1{
+        letter-spacing: 1px;
+        margin:0px;
+        color:#000;
+        font-size: 14px;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+      ul{
+        list-style: none;
+        li{
+        }
+      }
+      .searchWrap{
+
+        padding-bottom: 9px;
+        max-width: 250px;
+        margin: 0 auto;
+        margin-top: 15px;
+      }
+      .socialSection{
+        margin-bottom: 97px;
+        img{
+          margin-right: 5px;
+        }
+      }
+      .copyright{
+        p{
+          margin:0;
+          padding:0;
+          font-size: 12px;
+          color:#777777;
+          padding-bottom: 20px;
+        }
+      }
+    }
+
+  }
+}
+@media all and (max-width: 1024px) {
+  .column{
+    padding:10px;
+  }
+  .logo{
+    left:27px;
+  }
+}
+@media all and (max-width: 839px) {
+  footer{
+    margin-top: 0px;
+  }
+  .columnWrap{
+    .column{
+      display: flex;
+      flex:1;
+      border: 1px solid $bg_grey;
+      padding-bottom: 27px;
+      align-content: center;
+      align-items: center;
+      &:last-child{
+        padding-left:0px;
+        border: 1px solid $bg_grey;
+      }
+    }
+  }
+  .footNav{
+    display: none;
+  }
+  .logo{
+    display: none;
+  }
+}
+@media all and (max-width: 480px) {
+  .columnWrap{
+    display: block;
+    .column{
+      display: block;
+      text-align: center;
+    }
+  }
+}

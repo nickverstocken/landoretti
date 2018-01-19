@@ -1,0 +1,22 @@
+<div class="mainNavWrap">
+  <div class="mobileMenu">
+    <div class="hamburger">
+      <span (click)="toggleMenu()" class="glyphicon glyphicon-menu-hamburger"></span>
+    </div>
+  </div>
+  <nav class="mainNav {{menu}}">
+    <ul class="navigation">
+      <li><a title="go to home page" routerLink="/">Home</a></li>
+      <li><a title="go to the art auctions page" routerLink="/auctions">Art</a></li>
+      <li><a title="go to the search page"  routerLink="/isearch">isearch</a></li>
+      <li><a  title="go to your actions" routerLink="/myauctions">myauctions</a></li>
+      <li><a title="go to your bids"  href="#">mybids</a></li>
+      <li><a title="go to contact"  href="#">contact</a></li>
+    </ul>
+    <ul class="language">
+      <li><a href="#">NL</a></li>
+      <li><a href="#">FR</a></li>
+      <li><a class="selected" href="#">EN</a></li>
+    </ul>
+  </nav>
+</div>

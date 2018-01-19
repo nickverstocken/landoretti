@@ -1,0 +1,48 @@
+
+.form{
+  margin-top: 40px;
+  max-width: 753px;
+  .year{
+   max-width: 210px;
+  }
+  input{
+    padding-left:20px;
+  }
+  textarea{
+    height:125px;
+    padding-top: 20px;
+    padding-left: 20px;
+  }
+  .infoText{
+    font-size:14px;
+
+  }
+  .formItem{
+    align-self: center;
+  }
+
+
+  .price{
+    input{
+      padding-left: 40px;
+    }
+  }
+}
+@media all and (max-width: 840px) {
+  .form{
+    max-width: 100%;
+   .formRow{
+     display: block;
+     .formItem, .year{
+       display: block;
+       margin-right: 0px;
+       margin-bottom: 10px;
+       min-width: 100%;
+       input{
+         width: 100%;
+       }
+     }
+   }
+  }
+
+}

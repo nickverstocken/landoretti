@@ -1,0 +1,5 @@
+<div class="filter">
+  <ul>
+    <li *ngFor="let item of items; let index = index" ><a title="filter artist : {{item.name}}" [class.selected]="index == 0" (click)="changeFilter(item, $event)">{{item.name}}</a></li>
+  </ul>
+</div>

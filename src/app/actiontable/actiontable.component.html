@@ -1,0 +1,35 @@
+
+<table *ngIf="data.length > 0">
+  <thead>
+  <tr>
+    <th class="{{checkboxes ? 'showcheckboxes' : ''}}" scope="col"></th>
+    <th scope="col"></th>
+    <th scope="col">Action details</th>
+    <th scope="col">Estimated price</th>
+    <th scope="col">End price</th>
+    <th scope="col">Remaining time</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of data">
+    <td class="{{checkboxes ? 'showcheckboxes' : ''}}">
+      <label class="checkContainer">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+    </td>
+    <td data-label=""><div class="tableImage"><img src="../../assets/images/auctions/{{item.id}}.jpg" alt="{{item.artist}}"></div></td>
+    <td data-label="Actions details"><div class="title">{{item.title}}</div><div class="artist">{{item.year}}, {{item.artist}}</div></td>
+    <td data-label="Estimated price"><div class="price">€ {{item.price | number:'1.3':'fr'}}</div></td>
+    <td data-label="End price"><div>{{item.end_date | date:'MMMM dd, y'}}</div> <div>{{item.end_date | date:'h:mm:ss a'}} ({{item.end_date | date:'Z'}}) </div> </td>
+
+    <td data-label="Remaining time"><div class="estTime">
+      <app-timer *ngIf="item.status !== 'expired' && item.status !== 'sold' && item.status !== 'refused'" (expired)="changeStatus(item, 'expired')" time="{{toTimestamp(item.end_date)}}" format="{dd}d {hh}h {mm}m"></app-timer>
+      {{(item.status === 'expired' || item.status === 'refused') ?  'x' : (item.status === 'sold' ? 'Sold' : '') }}
+    </div></td>
+  </tr>
+  </tbody>
+</table>
+<div *ngIf="data.length === 0">
+  <p>You currently have no {{filter}} auctions. Please add a new action or wait for approval.</p>
+</div>

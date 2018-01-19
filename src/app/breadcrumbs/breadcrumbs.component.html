@@ -1,0 +1,14 @@
+<section class="breadCrumbs">
+  <div class="breadcrumbsWrap">
+    <ol itemscope itemtype="http://schema.org/BreadcrumbList">
+      <li *ngFor="let item of items; let i = index" itemprop="itemListElement" itemscope
+          itemtype="http://schema.org/ListItem">
+        <a itemscope itemtype="http://schema.org/Thing"
+           itemprop="item">
+          <span itemprop="name">{{item}}</span></a>
+        <meta itemprop="position" content="{{i}}" />
+      </li>
+    </ol>
+  </div>
+</section>
+
