@@ -22,6 +22,4 @@ const routes: Routes = [
     {path: 'faq', component: FaqComponent}
 ];
 
-export const Routing = RouterModule.forRoot(routes, {
-    useHash: true
-});
+export const Routing = RouterModule.forRoot(routes);
